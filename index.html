@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Vendita Case</title>
+		<link rel='stylesheet' href='style.css'>
+		<link type="text/css" rel="stylesheet" href="magicscroll/magicscroll.css"/>
+		<script type="text/javascript" src="magicscroll/magicscroll.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Vendita Case</h1>
+		</header>
+		<main>
+			<div id='left-column'>
+				<div id='user-pic-container' class='column-tabs personal-tab'>
+					<img class='user-pic' src='imgs/user.png'>
+					<p id="nickname">Compratore13487548 (Clicca per fare logout)</p>
+				</div>
+			</div>
+			<div id='center-column'>
+				<div class="MagicScroll" data-options="height: 500;">
+					<img src="imgs/casa1.jpg" />
+					<img src="imgs/casa2.jpg" />
+					<img src="imgs/casa3.jpg" />
+					<img src="imgs/casa4.jpg" />
+		
+				</div>
+				<p1 id="Prezzo">Prezzo: <b>530.000€</b>        
+					<br></p1>
+				<p3 id="disponibilita">Disponibilità:<svg , width="80" height="15">
+					<circle id = "disponibilita_svg" cx="10" cy="8" r="6"  fill="Green" />
+				  </svg><br></p3>
+				<p2>Metri quadrati : 200
+					<br>Stanze da Letto : 2
+					<br>Bagni: 2
+					<br>Garage: 1
+					<br>Cantina: Sì
+				</p2>
+				
+			</div>
+			<div id='right-column'>
+				<div id="contatto" class='column-tabs personal-tab'>
+					<p id="numero"><img class='user-pic' src='imgs/phone.png', height="15px">
+					  Contatta il Numero :+39 236236478</p>
+				</div>
+				<div id="email" class='column-tabs personal-tab'>
+					<p id="indirizzo"><img class='user-pic' src='imgs/email.png', height="15px">
+					  Email : mariolo.faro@gmail.com 
+					 </p>
+				</div>
+				<div id='prenotazione' class='column-tabs personal-tab'>
+					<p id="prenotazione_testo">Prenota visita</p>
+				</div>
+				<br>
+				<br>
+				<br>
+				<p id="titolo">Storico del prezzo negli anni (€)</p>
+				<canvas id="Storico_prezzo" style="width:100%;max-width:600px"></canvas>
+				<script>
+					var xValues = [2010,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022];
+					var yValues = [730000,730000,710000,700000,685000,650000,625000,600000,575000,540000,560000,530000];
+					
+					new Chart("Storico_prezzo", {
+					  type: "line",
+					  data: {
+						labels: xValues,
+						datasets: [{
+						  fill: false,
+						  lineTension: 0,
+						  backgroundColor: "rgba(0,0,255,1.0)",
+						  borderColor: "rgba(0,0,255,0.1)",
+						  data: yValues
+						}]
+					  },
+					  options: {
+						legend: {display: false},
+						scales: {
+						  yAxes: [{ticks: {min: 6, max:1000000}}],
+						}
+					  }
+					});
+					</script>
+			</div>
+		</main>
+		<footer>
+			<p>Credits: Tommaso Paolino</p>
+		</footer>
+		<script type='text/javascript' src='script.js'></script>
+	</body>
+</html>
+
+
